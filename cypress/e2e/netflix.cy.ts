@@ -1,0 +1,16 @@
+describe('Netflix', () => {
+  it('receipt', () => {
+    cy.visit('https://netflix.com/kr/login')
+    cy.get('label[for="id_userLoginId"]').click()
+    cy.get('input[name="userLoginId"]').type(Cypress.env('NETFLIX_ID'))
+    cy.get('label[for="id_password"]').click()
+    cy.get('input[name="password"]').type(Cypress.env('NETFLIX_PW'))
+    cy.get('button[type="submit"]').click()
+    cy.get('.profile-icon:first').click()
+    cy.visit('https://www.netflix.com/BillingActivity')
+    cy.get('.retableRow:first a')
+      .should('have.attr', 'href')
+      .then((href) => cy.visit(`https://www.netflix.com/${String(href)}`))
+    cy.screenshot()
+  })
+})

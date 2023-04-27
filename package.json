@@ -1,0 +1,19 @@
+{
+  "name": "receipt-collector",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:netflix": "cypress run --headed -b chrome -s cypress/e2e/netflix.cy.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^12.11.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.4"
+  }
+}
