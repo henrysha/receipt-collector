@@ -1,11 +1,13 @@
 {
   "name": "receipt-collector",
   "version": "1.0.0",
-  "description": "",
+  "description": "collect receipts for subscription services",
   "main": "index.js",
   "scripts": {
     "cypress:open": "cypress open",
-    "cypress:netflix": "cypress run --headed -b chrome -s cypress/e2e/netflix.cy.ts",
+    "cypress:run": "cypress run",
+    "cypress:netflix": "cypress run -s cypress/e2e/netflix.cy.ts",
+    "cypress:google": "cypress run -s cypress/e2e/google.cy.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

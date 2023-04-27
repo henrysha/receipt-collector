@@ -1,0 +1,16 @@
+describe('Youtube Premium', () => {
+  it('receipt', () => {
+    cy.visit('https://accounts.google.com')
+    cy.get('input[type=email]').click()
+    cy.get('input[type=email]').type(Cypress.env('GOOGLE_ID'))
+    cy.get('button#identifierNext').click()
+    cy.get('input[type=password]').type(Cypress.env('GOOGLE_PW'))
+    cy.get('button#passwordNext').click()
+    cy.visit('https://pay.google.com')
+    cy.get('iframe')
+      .should('have.attr', 'src')
+      .then((src) => cy.visit(String(src)))
+    cy.get('.b3id-widget-table-data-row:first').click()
+    cy.get('div[data-title="Transaction details"]').screenshot()
+  })
+})
