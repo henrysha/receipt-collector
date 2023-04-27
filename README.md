@@ -27,3 +27,6 @@ npm install
 
 then, run the npm script as you need, or run
 `npm run cypress:open` and execute the script on the Cypress GUI
+
+## Supported Services
+- Netflix
