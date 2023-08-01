@@ -6,7 +6,7 @@ describe('Youtube Premium', () => {
     cy.get('button#identifierNext').click()
     cy.get('input[type=password]').type(Cypress.env('GOOGLE_PW'))
     cy.get('button#passwordNext').click()
-    cy.visit('https://pay.google.com')
+    cy.visit('https://payments.google.com')
     cy.get('iframe')
       .should('have.attr', 'src')
       .then((src) => cy.visit(String(src)))
